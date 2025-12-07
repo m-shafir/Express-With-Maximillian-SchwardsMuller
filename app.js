@@ -4,6 +4,8 @@ const express = require("express");
 
 const app = express();
 
+app.set("view engine", "pug"); // telling Express to use Pug as the template engine for rendering views
+
 const adminRouter = require("./routes/admin");
 const shopRouter = require("./routes/shop");
 

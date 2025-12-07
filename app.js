@@ -10,10 +10,10 @@ app.use(express.json()); //  only parse json body
 // Parse form submissions (URL-encoded bodies)
 app.use(express.urlencoded({ extended: true }));
 
-app.use(adminRouter);
+app.use("/admin", adminRouter);
 app.use(shopRouter);
 
-app.use("/", (req, res) => {
+app.use("/shop", (req, res) => {
   res.status(404).send("<h1>Page Not Found</h1>");
 });
 

@@ -13,6 +13,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(adminRouter);
 app.use(shopRouter);
 
+app.use("/", (req, res) => {
+  res.status(404).send("<h1>Page Not Found</h1>");
+});
+
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`server running or port ${PORT}`);

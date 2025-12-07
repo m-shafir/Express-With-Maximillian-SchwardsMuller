@@ -12,6 +12,8 @@ app.use(express.json()); //  only parse json body
 // Parse form submissions (URL-encoded bodies)
 app.use(express.urlencoded({ extended: true }));
 
+app.use(express.static(path.join(__dirname, "public")));
+
 app.use("/admin", adminRouter);
 app.use(shopRouter);
 

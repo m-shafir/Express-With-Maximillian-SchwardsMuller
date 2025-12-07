@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/admin", adminRouter);
 app.use(shopRouter);
 
-app.use("/shop", (req, res) => {
+app.use((req, res) => {
   res.status(404).send("<h1>Page Not Found</h1>");
 });
 
